@@ -1,0 +1,127 @@
+.form {
+  max-width: 372px;
+  width: 100%;
+  margin: 0px auto;
+  margin-bottom: 32px;
+}
+.form-input {
+  border-radius: 4px;
+  border-color: #808080;
+  width: 272px;
+  height: 40px;
+  background-color: #fff;
+  text-indent: 16px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #808080;
+  outline: none;
+}
+.form-input:hover {
+  border-color: #000;
+}
+.form-input:active {
+  border-color: #4e75ff;
+}
+
+.form-btn {
+  border-radius: 8px;
+  padding-block: 8px;
+  padding-inline: 16px;
+  width: 91px;
+  height: 40px;
+  background-color: #4e75ff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border: none;
+}
+.form-btn:hover {
+  background-color: #6c8cff;
+}
+.gallery {
+  max-width: 1128px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px auto;
+}
+.gallery-item {
+  width: calc((100% - 48px) / 3);
+  border: 1px solid #808080;
+}
+.gallery-image {
+  display: block;
+  max-width: 360px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 152px;
+  transition: transform 250ms ease;
+}
+
+/* .gallery-link:hover .gallery-image {
+  transform: scale(1.044);
+} */
+.gallery-image-description {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 4px 20px;
+}
+.gallery-image-description-item {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  text-align: center;
+}
+.gallery-image-item-title {
+  font-weight: 600;
+  line-height: 1.33333;
+}
+.gallery-image-item-value {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+}
+.iziToast > .iziToast-close {
+  opacity: 1 !important;
+  filter: brightness(0) invert(1);
+}
+.my-toast .iziToast-message {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.03em !important;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #ddd;
+  border-bottom-color: #4e75ff;
+  border-radius: 50%;
+  display: block;
+  margin: 32px auto;
+  animation: rotation 1s linear infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
