@@ -1,8 +1,8 @@
 import { getImagesByQuery } from './js/pixabay-api';
 import { refs } from './js/refs';
 import {
+  allUpdateGallery,
   clearImageList,
-  createGallery,
   hideLoader,
   showLoader,
   showNotFound,
@@ -15,21 +15,23 @@ function hendleSearchForm(event) {
   const searchValue = event.target.elements.searchText.value.trim();
 
   if (searchValue === '') {
-    console.log('Please enter search query', 'warning');
+    showNotFound('Please enter search query');
     return;
   }
   showLoader();
+  clearImageList();
   getImagesByQuery(searchValue)
     .then(({ hits }) => {
-      clearImageList();
       if (hits.length > 0) {
-        createGallery(hits);
+        allUpdateGallery(hits);
       } else {
-        showNotFound();
+        showNotFound(
+          'Sorry, there are no images matching <br> your search query. Please try again!'
+        );
       }
     })
-    .catch(error => {
-      console.log('error images get by search', error);
+    .catch(() => {
+      showNotFound('Error images get by search');
     })
     .finally(() => {
       hideLoader();

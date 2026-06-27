@@ -8,6 +8,8 @@ export function getImagesByQuery(query) {
         key: '56469569-b64a9d05da2a53595ebe37b4e',
         q: query,
         image_type: 'photo',
+        orientation: 'horizontal',
+        safesearch: true,
         per_page: 9,
       },
     })

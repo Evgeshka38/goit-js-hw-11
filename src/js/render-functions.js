@@ -4,12 +4,11 @@ import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import ErrIcon from '../img/error-icon.svg';
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 export function createGallery(images) {
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
-  console.log(images);
   const markup = images
     .map(
       ({
@@ -60,11 +59,14 @@ export function createGallery(images) {
 export function clearImageList() {
   refs.galleryList.innerHTML = '';
 }
+export function allUpdateGallery(images) {
+  clearImageList();
+  createGallery(images);
+}
 
-export function showNotFound() {
+export function showNotFound(message) {
   iziToast.error({
-    message:
-      'Sorry, there are no images matching <br> your search query. Please try again!',
+    message,
     messageColor: '#fafafb',
     color: '#EF4040',
     class: 'my-toast',
